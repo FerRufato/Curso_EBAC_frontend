@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário com Validação</title>
+<body>
+    <form onsubmit="return validarFormulario()">
+        <label for="campoA">Número A:</label>
+        <input type="number" id="campoA" name="campoA" required>
+        <br>
+        <label for="campoB">Número B:</label>
+        <input type="number" id="campoB" name="campoB" required>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+<script>
+    function validarFormulario() {
+        let campoA = parseFloat(document.getElementById("campoA").value);
+        let campoB = parseFloat(document.getElementById("campoB").value);
+        
+        if (campoB > campoA) {
+            alert("Formulário válido! Número B é maior que número A.");
+            return true;
+        } else {
+            alert("Formulário inválido! Número B deve ser maior que número A.");
+            return false;
+        }
+    }
+</script>
+</head>
+
+</html>
